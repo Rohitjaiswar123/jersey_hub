@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #1a1a1a; /* sophisticated foundation */
+    --color-primary-50: #f8f9fa; /* lightest tint */
+    --color-primary-100: #e9ecef; /* light tint */
+    --color-primary-200: #dee2e6; /* medium light tint */
+    --color-primary-300: #ced4da; /* medium tint */
+    --color-primary-400: #adb5bd; /* medium */
+    --color-primary-500: #6c757d; /* medium dark */
+    --color-primary-600: #495057; /* dark */
+    --color-primary-700: #343a40; /* darker */
+    --color-primary-800: #212529; /* darkest */
+    --color-primary-900: #1a1a1a; /* primary base */
+    --color-primary-foreground: #ffffff; /* white */
+
+    /* Secondary Colors */
+    --color-secondary: #2d3748; /* subtle depth */
+    --color-secondary-50: #f7fafc; /* lightest tint */
+    --color-secondary-100: #edf2f7; /* light tint */
+    --color-secondary-200: #e2e8f0; /* medium light tint */
+    --color-secondary-300: #cbd5e0; /* medium tint */
+    --color-secondary-400: #a0aec0; /* medium */
+    --color-secondary-500: #718096; /* medium dark */
+    --color-secondary-600: #4a5568; /* dark */
+    --color-secondary-700: #2d3748; /* secondary base */
+    --color-secondary-800: #1a202c; /* darker */
+    --color-secondary-900: #171923; /* darkest */
+    --color-secondary-foreground: #ffffff; /* white */
+
+    /* Accent Colors */
+    --color-accent: #e53e3e; /* energy and urgency */
+    --color-accent-50: #fed7d7; /* lightest tint */
+    --color-accent-100: #feb2b2; /* light tint */
+    --color-accent-200: #fc8181; /* medium light tint */
+    --color-accent-300: #f56565; /* medium tint */
+    --color-accent-400: #e53e3e; /* accent base */
+    --color-accent-500: #c53030; /* medium dark */
+    --color-accent-600: #9b2c2c; /* dark */
+    --color-accent-700: #742a2a; /* darker */
+    --color-accent-800: #63171b; /* darkest */
+    --color-accent-900: #521b1b; /* deepest */
+    --color-accent-foreground: #ffffff; /* white */
+
+    /* Background Colors */
+    --color-background: #ffffff; /* clean canvas */
+    --color-background-secondary: #f7fafc; /* gentle separation */
+    --color-background-tertiary: #fafbfc; /* subtle off-white */
+
+    /* Surface Colors */
+    --color-surface: #f7fafc; /* gentle separation */
+    --color-surface-hover: #edf2f7; /* hover state */
+    --color-surface-active: #e2e8f0; /* active state */
+
+    /* Text Colors */
+    --color-text-primary: #1a202c; /* strong readability */
+    --color-text-secondary: #4a5568; /* clear hierarchy */
+    --color-text-tertiary: #718096; /* supporting details */
+    --color-text-inverse: #ffffff; /* white text */
+
+    /* Status Colors */
+    --color-success: #38a169; /* authentic verification */
+    --color-success-50: #f0fff4; /* lightest tint */
+    --color-success-100: #c6f6d5; /* light tint */
+    --color-success-200: #9ae6b4; /* medium light tint */
+    --color-success-300: #68d391; /* medium tint */
+    --color-success-400: #48bb78; /* medium */
+    --color-success-500: #38a169; /* success base */
+    --color-success-600: #2f855a; /* dark */
+    --color-success-700: #276749; /* darker */
+    --color-success-800: #22543d; /* darkest */
+    --color-success-900: #1c4532; /* deepest */
+    --color-success-foreground: #ffffff; /* white */
+
+    --color-warning: #d69e2e; /* stock alerts */
+    --color-warning-50: #fffbeb; /* lightest tint */
+    --color-warning-100: #fef3c7; /* light tint */
+    --color-warning-200: #fde68a; /* medium light tint */
+    --color-warning-300: #fcd34d; /* medium tint */
+    --color-warning-400: #fbbf24; /* medium */
+    --color-warning-500: #f59e0b; /* medium dark */
+    --color-warning-600: #d69e2e; /* warning base */
+    --color-warning-700: #b45309; /* dark */
+    --color-warning-800: #92400e; /* darker */
+    --color-warning-900: #78350f; /* darkest */
+    --color-warning-foreground: #ffffff; /* white */
+
+    --color-error: #e53e3e; /* helpful guidance */
+    --color-error-50: #fed7d7; /* lightest tint */
+    --color-error-100: #feb2b2; /* light tint */
+    --color-error-200: #fc8181; /* medium light tint */
+    --color-error-300: #f56565; /* medium tint */
+    --color-error-400: #e53e3e; /* error base */
+    --color-error-500: #c53030; /* medium dark */
+    --color-error-600: #9b2c2c; /* dark */
+    --color-error-700: #742a2a; /* darker */
+    --color-error-800: #63171b; /* darkest */
+    --color-error-900: #521b1b; /* deepest */
+    --color-error-foreground: #ffffff; /* white */
+
+    /* Border Colors */
+    --color-border: #e2e8f0; /* clean separation */
+    --color-border-light: #f1f5f9; /* subtle separation */
+    --color-border-dark: #cbd5e0; /* stronger separation */
+
+    /* Shadow Colors */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1); /* minimal depth */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15); /* primary CTAs */
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12); /* modals */
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.1); /* elevated elements */
+
+    /* Team Color Variables (Dynamic) */
+    --team-primary: var(--color-primary);
+    --team-secondary: var(--color-secondary);
+    --team-accent: var(--color-accent);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+
+  button {
+    @apply font-cta;
+  }
+
+  code, pre {
+    @apply font-accent;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary-700 focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+    transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent-600 focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+    transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-lg shadow-sm;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md transition-shadow duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .team-adaptive {
+    background-color: var(--team-primary);
+    color: var(--team-secondary);
+  }
+
+  .authentication-badge {
+    @apply bg-success text-success-foreground px-3 py-1 rounded-full text-sm font-medium shadow-sm;
+  }
+
+  .urgency-indicator {
+    @apply bg-warning text-warning-foreground px-2 py-1 rounded text-xs font-medium animate-pulse;
+  }
+
+  .jersey-reveal {
+    transform: rotateY(-15deg);
+    opacity: 0;
+    transition: all 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .jersey-reveal.in-view {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+
+  .social-proof-slide {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .social-proof-slide.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .cta-hover {
+    transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .cta-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .content-reveal {
+    transform: translateY(8px);
+    opacity: 0;
+    transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .content-reveal.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
